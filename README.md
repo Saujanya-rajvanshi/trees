@@ -4,6 +4,7 @@
 - [basic](#basic)
 - [height and depth](#height-and-depth)
 - [binary tree](#binary-tree)
+- [binary search tree](#binary-search-tree)
 - [avl](#avl)
 - [b tree](#b-tree)
 - [threaded binary tree](#threaded-binary-tree)
@@ -74,7 +75,6 @@ Depth(D) = 2
 - [properties of binary tree](#properties-of-binary-tree)
 - [representing binary tree](#representing-binary-tree)
 - [binary tree traversal](#binary-tree-traversal)
-- [binary search tree](#binary-search-tree)
 
 ---
 
