@@ -66,6 +66,7 @@ Depth(D) = 2
 - [definition](#Definition)
 - [types](#types)
 - [extended binary tree](#xtended-binary-tree)
+- [representing binary tree](#representing-binary-tree)
 
 ---
 
@@ -175,6 +176,8 @@ Original Binary Tree                 Extended Binary Tree
 * `○ / letters` → Internal nodes
 * `□` → External (dummy) nodes
 
+---
+---
 ## properties of binary tree
 
 **1. Maximum nodes at level `l`**
@@ -201,3 +204,77 @@ Original Binary Tree                 Extended Binary Tree
 
 * Min height = **⌈log₂(N + 1)⌉ − 1**
 * (Perfect / complete binary tree)
+  
+---
+
+## representing binary tree 
+
+can be represenyed in two ways 
+1. array representation - [array representation](#array-representation)
+2. linked representation - [linked representation](linked-representation)
+
+## array representation
+
+* Array Representation of Binary Tree
+* Used mainly for perfect / complete binary trees
+* Nodes stored in level-order traversal
+* Each node gets a unique array index
+* Easy parent–child index calculation
+
+```
+┌───────────────────────────────┐      ┌────────────────────────────────┐
+│  CASE 1: Index starts with 1  │      │   CASE 2: Index starts with 0  │
+├───────────────────────────────┤      ├────────────────────────────────┤
+│ Root index = 1                │      │ Root index = 0                 │
+│                               │      │                                │
+│ Parent(i) = ⌊ i / 2 ⌋          │      │ Parent(i) = ⌊ (i − 1) / 2 ⌋     │
+│                               │      │                                │
+│ Left child = 2i               │      │ Left child = 2i + 1            │
+│                               │      │                                │
+│ Right child = 2i + 1          │      │ Right child = 2i + 2           │
+└───────────────────────────────┘      └────────────────────────────────┘
+
+```
+```
+    8
+   / \
+  6   5
+ /\   /\
+9  4  3 7
+
+arr = [8,6,5,9,4,3,7]
+```
+
+### perfect binary array representation case
+```
+    8
+   / \
+  6   5
+ /\   /\
+9    3  7
+ 
+arr = [8,6,5,9, ,3,7]   // write all null values
+```
+
+### complete binary tree array representation
+
+```
+    8
+   / \
+  6   5
+ /\   /\
+9    
+ 
+arr = [8,6,5,9, , , ]   // write all null values in the last 
+```
+
+
+## linked representation
+_________________________________________________________________
+| address of eft child |    data       |  address of right child |
+__________________________________________________________________
+
+
+
+
+
