@@ -501,6 +501,7 @@ TreeInsert(T, z)  // T is the tree, z is the node to insert
     - **Inorder Predecessor**: Largest value in left subtree.
     - **Inorder Successor**: Smallest value in right subtree.
   - Then delete the predecessor/successor node (which will now be Case 1 or 2).
+<img width="667" height="265" alt="image" src="https://github.com/user-attachments/assets/33bf3447-d0e3-4579-ab60-fe21672364e8" />
 
 ---
 
