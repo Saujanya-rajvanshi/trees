@@ -99,6 +99,7 @@ A binary tree is a special type of tree in which **each node can have at most 2 
     D
 ```
 
+##### types
 ---
 ### 🌳 Types of Binary Tree 
 
