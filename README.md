@@ -70,7 +70,7 @@ Depth(D) = 2
 
 - [definition](#Definition)
 - [types](#types)
-- [extended binary tree](#xtended-binary-tree)
+- [extended binary tree](#extended-binary-tree)
 - [properties of binary tree](#properties-of-binary-tree)
 - [representing binary tree](#representing-binary-tree)
 - [binary tree traversal](#binary-tree-traversal)
