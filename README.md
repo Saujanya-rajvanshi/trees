@@ -356,8 +356,7 @@ I – J – D – F – B – K – G – H – C – A
 2. insert
 3. delete
 
-#### search 
-#### BST Search Operation 
+### 🧮  BST Search Operation 
 
 #### **What is BST Search?**
 
@@ -411,8 +410,7 @@ Search(x, k)
 
 ---
 
-### **Time Complexity**
-
+**Time Complexity**
 * **Best / Average:** O(log N)
 * **Worst (skewed tree):** O(N)
 
@@ -420,7 +418,7 @@ Here’s a concise breakdown of the **BST Insert Operation** along with clean ps
 
 ---
 
-### BST Insert Operation
+### 🧮 BST Insert Operation
 
 - **Start with an empty tree.**
 - Insert nodes one by one.
@@ -446,7 +444,7 @@ Final structure:
 
 ---
 
-### 🧮 Pseudocode: BST Insert
+#### Pseudocode: BST Insert
 
 ```plaintext
 TreeInsert(T, z)  // T is the tree, z is the node to insert
@@ -476,7 +474,7 @@ TreeInsert(T, z)  // T is the tree, z is the node to insert
 
 ---
 
-### BST Delete Operation 
+### 🧮 BST Delete Operation 
 
 - **Case 1: Node with No Children (Leaf Node)**
   - Simply remove the node.
@@ -493,8 +491,6 @@ TreeInsert(T, z)  // T is the tree, z is the node to insert
   - Then delete the predecessor/successor node (which will now be Case 1 or 2).
 
 ---
-
-Here’s the clean and structured **pseudocode for deleting a node in a Binary Search Tree (BST)**, based on the image you shared:
 
 ---
 
