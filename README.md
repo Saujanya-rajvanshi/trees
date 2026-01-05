@@ -105,7 +105,7 @@ A binary tree is a special type of tree in which **each node can have at most 2 
 
 
 
-1️⃣ **Full Binary Tree**
+1️⃣ **Full/strict Binary Tree**
 → Every node has **0 or 2 children**
 
 2️⃣ **Complete Binary Tree**
@@ -121,7 +121,7 @@ A binary tree is a special type of tree in which **each node can have at most 2 
 → All nodes skewed to **one side** (left or right)
 
 6️⃣ **Balanced Binary Tree**
-→ Height difference of left & right subtree ≤ **1**
+→ Height difference of left & right subtree **1 , -1, 0**
 
 7️⃣ **Binary Search Tree (BST)**
 → Left < Root < Right
@@ -131,8 +131,8 @@ FULL        COMPLETE        PERFECT        DEGENERATE        LEFT SKEWED     RIG
   o            o               o               o                 o               o               o               5
  / \          / \             / \               \               /                 \             / \             / \
 o   o        o   o           o   o               o             o                   o           o   o           3   7
-            /               / \                   \           /                     \         / \             2   4
-           o               o   o                   o         o                       o       o   o
+            /               /\   /\               \           /                     \         / \             / \  
+           o               o  o o  o               o         o                       o       o   o           2   4
 ```
 
 ✅ **Fast memory trick:**
