@@ -67,6 +67,7 @@ Depth(D) = 2
 - [extended binary tree](#xtended-binary-tree)
 - [properties of binary tree](#properties-of-binary-tree)
 - [representing binary tree](#representing-binary-tree)
+- [binary tree traversal](#binary-tree-traversal)
 
 ---
 
@@ -93,6 +94,8 @@ A binary tree is a special type of tree in which **each node can have at most 2 
 
 ---
 ### 🌳 Types of Binary Tree 
+
+
 
 1️⃣ **Full Binary Tree**
 → Every node has **0 or 2 children**
@@ -299,7 +302,39 @@ __________________________________________________________________
 * **Access/search is slower** (must start from root and traverse)
 
 
+## binary tree traversal
 
+### Binary Tree Traversals — **Short Notes**
 
+**Binary Tree Traversal**
+Process of visiting **all nodes** of a binary tree in a specific order.
+
+**Types (3):**
+
+1. **Pre-Order** → **Roo**t → Left → Right
+2. **In-Order** →  Left → **Root** → Right
+3. **Post-Order** → Left → Right → **Root**
+
+---
+
+### Traversal Orders 
+
+#### 1️⃣ Pre-Order Traversal (R – L – R)
+
+```
+A – B – D – I – J – F – C – G – K – H
+```
+
+#### 2️⃣ In-Order Traversal (L – R – R)
+
+```
+I – D – J – B – F – A – G – K – C – H
+```
+
+#### 3️⃣ Post-Order Traversal (L – R – R)
+
+```
+I – J – D – F – B – K – G – H – C – A
+```
 
 
