@@ -714,10 +714,10 @@ BALANCED
 ## deletion 
 ---
 1. from leaf node 
-**case 1.** if leaf node contaion **more than min no.**(ceil(M/2) − 1) of trees - delete **directly**
-**case 2.** if leaf node contaion **min no.** - **borow** from adjacent leaf node
+* **case 1.** if leaf node contaion **more than min no.**(ceil(M/2) − 1) of trees - delete **directly**
+* **case 2.** if leaf node contaion **min no.** - **borow** from adjacent leaf node
 in here the closest parent node comes down and the largest or smallest node gets on the parent depending on weither the node is on right or left respectively
-**case 2.** if **both** the adjacent leaf node also have min no. of keys then the parent node comes and **merges** with the adjacent node.
+* **case 2.** if **both** the adjacent leaf node also have min no. of keys then the parent node comes and **merges** with the adjacent node.
 
 2. from internal node
 * look for the attach leaf node
