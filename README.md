@@ -187,7 +187,7 @@ Original Binary Tree                 Extended Binary Tree
 
 **2. Maximum nodes in a binary tree of height `h`**
 
-* Max nodes = **2^(h+1) − 1**
+* Max nodes = **2^(h+1) − 1**/
 * Height = longest path from root to leaf
 
 **3. Minimum nodes in a binary tree of height `h`**
@@ -211,7 +211,7 @@ Original Binary Tree                 Extended Binary Tree
 
 can be represenyed in two ways 
 1. array representation - [array representation](#array-representation)
-2. linked representation - [linked representation](linked-representation)
+2. linked representation - [linked representation](#linked-representation)
 
 ## array representation
 
