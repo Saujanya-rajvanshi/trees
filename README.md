@@ -522,4 +522,90 @@ TreeDelete(T, z)  // T is the tree, z is the node to delete
 ```
 
 ---
+---
 
+### 📊 BST Time & Space Complexities
+
+| Operation | Best Case | Average Case | Worst Case |
+|-----------|-----------|--------------|------------|
+| Search    | O(log n)  | O(log n)     | O(n)       |
+| Insertion | O(log n)  | O(log n)     | O(n)       |
+| Deletion  | O(log n)  | O(log n)     | O(n)       |
+
+**Space Complexity:**  
+- All operations: **O(n)**
+
+---
+
+### 🔍 BST vs Array vs Linked List
+
+| Data Structure     | Search Time   | Shifting Needed on Insert/Delete |
+|--------------------|---------------|----------------------------------|
+| Sorted Array       | O(log n) ✓    | Yes ✓                            |
+| Linked List        | O(n) ✓        | No ✓                             |
+| Binary Search Tree | O(log n) ✓    | No ✓                             |
+
+---
+
+
+### 📊 BST balance & time Complexities
+
+* height of each binary tree is +1/-1/0
+* time complexity = O(log N)
+
+<img width="174" height="160" alt="image" src="https://github.com/user-attachments/assets/61992294-b236-4ed8-b74c-a12599941693" />
+
+
+#### Practical Applications of BST:
+1. Databases: Many database systems use BSTs for indexing data, which allows for fast
+retrieval of records based on keys.
+2. Symbol Tables: Compilers and interpreters use BSTs to store and search for identifiers (e.g.,
+variable names) efficiently.
+3. File Systems: BSTs are employed in file systems to organize directory structures and quickly
+locate files.
+4. Caches: In computer architecture, BSTs are used in caches to efficiently manage and search for cached data.
+5. Network Routing: Routing tables in network routers often use BSTs for efficient routing
+decisions.
+
+
+## 📊 AVL tree 
+---
+* for some unbalanced tree to make it balance
+* to make time complexity O(log N)
+
+**AVL Tree Balance Factor**:
+
+- **Balance Factor (BF)** = height of left subtree − height of right subtree → \( \text{BF} = h_l - h_r \)  
+- A node is **balanced** if BF is between −1 and +1; outside this range means **rotation is needed**.
+
+---
+
+### 🌳 AVL Tree Rotation 
+
+- **Purpose**: Restore balance in AVL trees when nodes become unbalanced.
+- **Balance Factor**: Difference between heights of left and right subtrees.
+- **Rotation Time**: O(1) per rotation; overall operations remain O(log n).
+
+---
+
+---
+
+### 🌳 AVL Tree Rotations 
+
+| Rotation Type | Trigger Condition                                      | Steps Involved       | Resulting Root |
+|---------------|--------------------------------------------------------|----------------------|----------------|
+| **LL Rotation** | Insertion in left subtree of left child                | Single Right Rotation | Middle node     |
+| **RR Rotation** | Insertion in right subtree of right child              | Single Left Rotation  | Middle node     |
+| **LR Rotation** | Insertion in right subtree of left child               | RR + LL (Double Rotation) | Middle node     |
+| **RL Rotation** | Insertion in left subtree of right child               | LL + RR (Double Rotation) | Middle node     |
+
+---
+
+### 🧠 Rotation Examples
+
+- **LL**: Insert 10 → 30 → 20 → imbalance at 30 → rotate right → root becomes 20  
+- **RR**: Insert 10 → 20 → 30 → imbalance at 10 → rotate left → root becomes 20  
+- **LR**: Insert 30 → 10 → 20 → imbalance at 30 → RR on 10 → LL on 30 → root becomes 20  
+- **RL**: Insert 10 → 30 → 20 → imbalance at 10 → LL on 30 → RR on 10 → root becomes 20
+
+---
