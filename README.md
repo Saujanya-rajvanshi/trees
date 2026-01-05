@@ -4,6 +4,7 @@
 - [basic](#basic)
 - [height and depth](#height-and-depth)
 - [binary tree](#binary-tree)
+- [properties of binary tree](#properties-of-binary-tree)
 
 
 ## basic 
@@ -60,13 +61,17 @@ Depth(D) = 2
 
 ##### binary tree 
 
-### 🌳 Binary Tree — Notes (with diagrams)
+## 🌳 Binary Tree 
+
+- [definition](#Definition)
+- [types](#types)
+- [extended binary tree](#xtended-binary-tree)
 
 ---
 
 ## 1️⃣ Binary Tree
 
-**Definition:**
+### Definition:
 A binary tree is a special type of tree in which **each node can have at most 2 children**.
 * nodes are as left as possible 
 
@@ -109,8 +114,90 @@ A binary tree is a special type of tree in which **each node can have at most 2 
 7️⃣ **Binary Search Tree (BST)**
 → Left < Root < Right
 
+```
+FULL        COMPLETE        PERFECT        DEGENERATE        LEFT SKEWED     RIGHT SKEWED     BALANCED        BST
+  o            o               o               o                 o               o               o               5
+ / \          / \             / \               \               /                 \             / \             / \
+o   o        o   o           o   o               o             o                   o           o   o           3   7
+            /               / \                   \           /                     \         / \             2   4
+           o               o   o                   o         o                       o       o   o
+```
+
 ✅ **Fast memory trick:**
 **F C P D S B B**
 (Full, Complete, Perfect, Degenerate, Skewed, Balanced, BST)
 
-------
+---
+
+##### extended binary tree
+
+## Extended Binary Tree 
+
+**Definition**
+
+* An **Extended Binary Tree (EBT)** is formed by converting a binary tree into a **full binary tree** by adding **dummy (external) nodes** wherever a child is missing.
+
+**Node Types**
+
+* **Internal nodes** → original tree nodes
+* **External nodes** → added dummy nodes (represent NULL children)
+
+**Key Points**
+
+* Every **internal node has exactly 2 children**
+* Every **external node is a leaf**
+* All NULL subtrees are replaced by external nodes
+* Useful in **expression trees** and **theoretical analysis**
+
+**Properties**
+
+* External nodes = Internal nodes + 1
+* Internal nodes are **non-leaf**
+* External nodes have **no children**
+
+---
+
+### **Diagram (Original → Extended) in ONE ROW**
+
+```
+Original Binary Tree                 Extended Binary Tree
+        A                                   A
+       / \                                 / \
+      B   C                               B   C
+     /   / \                             / \ / \
+    D   G   H                           D  □ G  H
+                                           / \ / \
+                                          □  □ □  □
+```
+
+**Legend**
+
+* `○ / letters` → Internal nodes
+* `□` → External (dummy) nodes
+
+## properties of binary tree
+
+**1. Maximum nodes at level `l`**
+
+* Max nodes = **2ˡ**
+* Root is at **level 0**
+
+**2. Maximum nodes in a binary tree of height `h`**
+
+* Max nodes = **2^(h+1) − 1**
+* Height = longest path from root to leaf
+
+**3. Minimum nodes in a binary tree of height `h`**
+
+* Min nodes = **h + 1**
+* (Skewed binary tree)
+
+**4. Maximum height of a binary tree with `N` nodes**
+
+* Max height = **N − 1**
+* (Completely skewed tree)
+
+**5. Minimum height of a binary tree with `N` nodes**
+
+* Min height = **⌈log₂(N + 1)⌉ − 1**
+* (Perfect / complete binary tree)
