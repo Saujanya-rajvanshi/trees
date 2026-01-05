@@ -1,4 +1,4 @@
-<img width="521" height="841" alt="image" src="https://github.com/user-attachments/assets/5061bcdb-f8f0-44c8-a650-d7bdf764d053" /># trees
+# tree 
 
 ## INDEX 
 - [basic](#basic)
