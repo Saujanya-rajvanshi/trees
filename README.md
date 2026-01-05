@@ -580,6 +580,7 @@ locate files.
 5. Network Routing: Routing tables in network routers often use BSTs for efficient routing
 decisions.
 
+###### avl 
 
 ## 📊 AVL tree 
 ---
@@ -600,8 +601,6 @@ decisions.
 - **Rotation Time**: O(1) per rotation; overall operations remain O(log n).
 
 ---
-
-###### avl 
 ---
 
 ### 🌳 AVL Tree Rotations 
