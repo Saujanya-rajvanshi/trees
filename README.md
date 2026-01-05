@@ -589,7 +589,7 @@ decisions.
 
 **AVL Tree Balance Factor**:
 
-- **Balance Factor (BF)** = height of left subtree − height of right subtree → \( \text{BF} = h_l - h_r \)  
+- **Balance Factor (BF)** = height of left subtree − height of right subtree 
 - A node is **balanced** if BF is between −1 and +1; outside this range means **rotation is needed**.
 
 ---
