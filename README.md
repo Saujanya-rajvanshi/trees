@@ -712,6 +712,7 @@ BALANCED
 
 
 ## deletion 
+---
 1. from leaf node 
 **case 1.** if leaf node contaion **more than min no.**(ceil(M/2) − 1) of trees - delete **directly**
 **case 2.** if leaf node contaion **min no.** - **borow** from adjacent leaf node
@@ -729,6 +730,8 @@ in here the closest parent node comes down and the largest or smallest node gets
 * if both adjacent root and leaf node has min no of keys same level of adjacent node merges
 * **case 3.** root not deletion
 * either one of in order predecer or in order succesor takes place of root
+
+---
 
 ### 🌳 Comparison of Binary Tree, BST, and AVL Tree
 
