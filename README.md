@@ -7,6 +7,7 @@
 - [avl](#avl)
 - [b tree](#b-tree)
 - [threaded binary tree](#threaded-binary-tree)
+- [huffman coding](#huffman-coding)
 
 ## basic 
 
@@ -720,29 +721,6 @@ in here the closest parent node comes down and the largest or smallest node gets
 * **case 3.** root not deletion
 * either one of in order predecer or in order succesor takes place of root
 
-Here are concise notes on **Threaded Binary Trees**:
-
----
-
-##### threaded binary tree
-
-## 🧵 Threaded Binary Tree 
-
-- Designed to optimize **inorder traversal** without recursion or stack.
-- **Right NULL pointers** are replaced with links to the **inorder successor**.
-- Each node stores:
-  - **Left field** → left thread or child
-  - **Right field** → right thread or child
-  - **Middle field** → actual data
-- Improves traversal speed and reduces memory overhead.
-
----
-
-
-<img width="972" height="387" alt="image" src="https://github.com/user-attachments/assets/b22d262b-9617-4f53-9442-90faeeb91131" />
-
----
-
 ### 🌳 Comparison of Binary Tree, BST, and AVL Tree
 
 | Feature                     | Binary Tree                      | Binary Search Tree (BST)                          | AVL Tree                                      |
@@ -763,4 +741,159 @@ Here are concise notes on **Threaded Binary Trees**:
 - **Binary Tree** is a general structure with no ordering or balancing — useful for hierarchical data but inefficient for search.
 - **BST** improves search by ordering nodes, but can degrade to a linked list if unbalanced.
 - **AVL Tree** maintains strict balance using rotations, ensuring consistently fast operations.
+
+---
+
+##### threaded binary tree
+
+## 🧵 Threaded Binary Tree 
+
+- Designed to optimize **inorder traversal** without recursion or stack.
+- **Right NULL pointers** are replaced with links to the **inorder successor**.
+- Each node stores:
+  - **Left field** → left thread or child
+  - **Right field** → right thread or child
+  - **Middle field** → actual data
+- Improves traversal speed and reduces memory overhead.
+
+---
+### single threaded 
+
+<img width="560" height="202" alt="image" src="https://github.com/user-attachments/assets/b22d262b-9617-4f53-9442-90faeeb91131" />
+
+---
+
+### double threaded
+
+<img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/f9b472d4-66bb-44cf-9162-7ad62f3cd9a7" />
+
+---
+
+### modified advanced
+<img width="520" height="584" alt="image" src="https://github.com/user-attachments/assets/7c8cb033-c3c0-4da0-8b70-14420e48972c" />
+
+###### huffman coding 
+---
+
+### 🗜️ Huffman Coding – Full Notes
+
+#### 📌 What is Huffman Coding?
+- A **lossless data compression algorithm**.
+- Compresses data by assigning **variable-length codes** to characters based on frequency.
+- Frequently occurring characters get **shorter codes**, reducing overall size.
+
+#### 🧠 Key Properties
+- No code is a **prefix** of another → ensures **unambiguous decoding**.
+- Two main steps:
+  1. **Build Huffman Tree** using character frequencies.
+  2. **Traverse the tree** to assign binary codes to each character.
+
+#### 📊 Example 1:  
+- String: `"BCAADDDCCACACAC"`  
+- Original size: 15 characters × 8 bits = **120 bits**  
+- Huffman coding reduces size by using shorter codes for frequent characters.
+
+#### 🧪 Example 2:  
+- Message: `"ABBCDBCCDAABBBEEEBA"`  
+- Character frequencies:
+  - A: 4  
+  - B: 7  
+  - C: 3  
+  - D: 3  
+  - E: 4  
+- Start building Huffman Tree by combining **lowest frequency characters** (C and D).
+
+---
+---
+
+### 🧮 Huffman Algorithm – Steps
+
+1. **Create a priority queue (Q)** of unique characters.
+2. **Sort Q** in ascending order of frequency.
+3. **Repeat until one node remains**:
+   - Create a new node.
+   - Extract two minimum-frequency nodes from Q.
+   - Assign them as left and right children of the new node.
+   - Set new node’s frequency = sum of both.
+   - Insert new node back into Q.
+4. **Return the root node** of the final Huffman Tree.
+
+---
+
+### 🌳 Role of Binary Tree in Huffman Coding
+
+| Benefit              | Description |
+|----------------------|-------------|
+| **Efficient Encoding** | Frequent characters get shorter codes via tree structure |
+| **Prefix Codes**       | No code is a prefix of another → ensures unambiguous decoding |
+| **Optimal Compression**| Tree ensures minimal average code length |
+| **Fast Traversal**     | Tree enables quick encoding and decoding |
+
+---
+
+
+###### non recursive post order traversal 
+---
+
+### 🔁 Non-Recursive Postorder Traversal – Concept
+
+- **Postorder Traversal**: Left → Right → Root  
+- Normally done using recursion or stack  
+- This method uses **two stacks (S1 and S2)** to simulate postorder traversal iteratively
+
+---
+
+### 🧮 Algorithm Steps
+
+1. **Initialize two stacks**: `S1` and `S2`
+2. **Push root** to `S1`
+3. **While `S1` is not empty**:
+   - Pop from `S1`, push to `S2`
+   - Push left child to `S1` (if exists)
+   - Push right child to `S1` (if exists)
+4. **Print contents of `S2`** → gives postorder traversal
+
+---
+
+### 🧑‍💻 C Code Snippet
+
+```c
+void postOrderIterative(struct Node* root) {
+    if (root == NULL) return;
+    struct StackNode *s1 = NULL, *s2 = NULL;
+    push(&s1, root);
+
+    while (!isEmpty(s1)) {
+        struct Node *temp = pop(&s1);
+        push(&s2, temp);
+        if (temp->left) push(&s1, temp->left);
+        if (temp->right) push(&s1, temp->right);
+    }
+
+    while (!isEmpty(s2)) {
+        struct Node *temp = pop(&s2);
+        printf("%d ", temp->data);
+    }
+}
+```
+
+---
+
+### 🌳 Example Tree
+
+```
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+             \
+              G
+```
+
+**Postorder Output**: `D E B G F C A`
+
+---
+
+Let me know if you'd like this visualized or converted to Python or Java next!
 
