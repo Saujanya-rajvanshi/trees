@@ -45,24 +45,24 @@ Height(A) = 2
 
 ```
 
----
+```
 2. Depth
 Definition: The depth of a node is the number of edges from the root to that node.
 Root node: Depth = 0.
 Formula:
 Depth(node)=Depth(parent)+1\text{Depth}(node) = \text{Depth}(parent) + 1Depth(node)=Depth(parent)+1
-```
+
 Example:    A (depth 0)
            / \
           B   C
          / \
         D   E
-```
+
 Depth(A) = 0
 Depth(B) = 1
 Depth(D) = 2
 
----
+```
 
 ##### binary tree 
 
