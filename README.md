@@ -4,7 +4,6 @@
 - [basic](#basic)
 - [height and depth](#height-and-depth)
 - [binary tree](#binary-tree)
-- [properties of binary tree](#properties-of-binary-tree)
 
 
 ## basic 
@@ -66,6 +65,7 @@ Depth(D) = 2
 - [definition](#Definition)
 - [types](#types)
 - [extended binary tree](#xtended-binary-tree)
+- [properties of binary tree](#properties-of-binary-tree)
 - [representing binary tree](#representing-binary-tree)
 
 ---
