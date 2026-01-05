@@ -268,11 +268,36 @@ arr = [8,6,5,9, ,3,7]   // write all null values
 arr = [8,6,5,9, , , ]   // write all null values in the last 
 ```
 
+### Advantages of Array Representation of Binary Tree
+
+* Stored in **contiguous memory** → cache-friendly, faster access
+* **No pointers required** → saves memory
+* Allows **direct/random access** to nodes using index
+
+### Limitations of Array Representation of Binary Tree
+
+* Requires **contiguous memory** → not suitable for large trees
+* **Insertion & deletion are costly** (array shifting needed)
+* Many **NULL entries** in sparse trees → poor space utilization
+
 
 ## linked representation
 _________________________________________________________________
 | address of eft child |    data       |  address of right child |
 __________________________________________________________________
+
+
+### Advantages of Linked Representation of Binary Tree
+
+* Tree can **grow or shrink dynamically** (uses only required memory)
+* **Insertion and deletion are easy** (only pointer changes)
+* **Efficient for sparse trees** (no wasted space for NULL nodes)
+
+### Disadvantages of Linked Representation of Binary Tree
+
+* Requires **extra memory for pointers**
+* **Access/search is slower** (must start from root and traverse)
+
 
 
 
