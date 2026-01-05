@@ -237,20 +237,20 @@ can be represenyed in two ways
 * Each node gets a unique array index
 * Easy parent–child index calculation
 
-```
-┌───────────────────────────────┐      ┌────────────────────────────────┐
-│  CASE 1: Index starts with 1  │      │   CASE 2: Index starts with 0  │
-├───────────────────────────────┤      ├────────────────────────────────┤
-│ Root index = 1                │      │ Root index = 0                 │
-│                               │      │                                │
-│ Parent(i) = ⌊ i / 2 ⌋          │      │ Parent(i) = ⌊ (i − 1) / 2 ⌋     │
-│                               │      │                                │
-│ Left child = 2i               │      │ Left child = 2i + 1            │
-│                               │      │                                │
-│ Right child = 2i + 1          │      │ Right child = 2i + 2           │
-└───────────────────────────────┘      └────────────────────────────────┘
+---
 
-```
+### 📊 Array Representation of Binary Tree
+
+| **Property**         | **Case 1: Index Starts with 1** | **Case 2: Index Starts with 0** |
+| -------------------- | ------------------------------- | ------------------------------- |
+| **Root Index**       | `1`                             | `0`                             |
+| **Parent of i**      | ⌊ `i / 2` ⌋                     | ⌊ `(i − 1) / 2` ⌋               |
+| **Left Child of i**  | `2i`                            | `2i + 1`                        |
+| **Right Child of i** | `2i + 1`                        | `2i + 2`                        |
+
+---
+
+
 ```
     8
    / \
