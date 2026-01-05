@@ -8,6 +8,9 @@
 - [b tree](#b-tree)
 - [threaded binary tree](#threaded-binary-tree)
 - [huffman coding](#huffman-coding)
+- [non recursive post order traversal](#non-recursive-post-order-traversal)
+- [path lenth](#path-length)
+
 
 ## basic 
 
@@ -894,6 +897,12 @@ void postOrderIterative(struct Node* root) {
 **Postorder Output**: `D E B G F C A`
 
 ---
+
+### path length
+
+<img width="893" height="451" alt="image" src="https://github.com/user-attachments/assets/49ef9b06-a4ed-4cc0-8175-a1d39eb17299" />
+
+
 
 Let me know if you'd like this visualized or converted to Python or Java next!
 
