@@ -1,4 +1,4 @@
-# trees
+<img width="521" height="841" alt="image" src="https://github.com/user-attachments/assets/5061bcdb-f8f0-44c8-a650-d7bdf764d053" /># trees
 
 ## INDEX 
 - [basic](#basic)
@@ -68,6 +68,7 @@ Depth(D) = 2
 - [properties of binary tree](#properties-of-binary-tree)
 - [representing binary tree](#representing-binary-tree)
 - [binary tree traversal](#binary-tree-traversal)
+- [binary search tree](#binary-search-tree)
 
 ---
 
@@ -316,6 +317,7 @@ Process of visiting **all nodes** of a binary tree in a specific order.
 3. **Post-Order** → Left → Right → **Root**
 
 ---
+<img width="189" height="127" alt="image" src="https://github.com/user-attachments/assets/8e2d3919-31ad-4f64-bb9e-7184edd10a5b" />
 
 ### Traversal Orders 
 
@@ -337,4 +339,191 @@ I – D – J – B – F – A – G – K – C – H
 I – J – D – F – B – K – G – H – C – A
 ```
 
+
+## binary search tree 
+
+* smaller value are on left
+* grater value are on the right
+* in order is always in increaing order
+
+> Unique ordering of elements means duplicates are usually not allowed.
+> In-order traversal of a BST gives sorted order of elements.
+> Average height: O(log n) (for balanced BST).
+> Worst case height: O(n) (when tree becomes skewed).
+
+### BST operation 
+1. search
+2. insert
+3. delete
+
+#### search 
+#### BST Search Operation 
+
+#### **What is BST Search?**
+
+* Always start from **root**.
+* If **key < node**, go to **left subtree**.
+* If **key > node**, go to **right subtree**.
+* If **key == node**, **found**.
+* If you reach **NULL**, element **not present**.
+
+---
+
+### **Example**
+
+**Search key = 10**
+
+Steps:
+
+1. Start at root **12**
+   → `10 < 12` → go **left**
+2. At node **7**
+   → `10 > 7` → go **right**
+3. At node **9**
+   → `10 > 9` → go **right**
+4. At node **10**
+   → `10 == 10` → **FOUND**
+
+✔️ Result: **10 is present in BST**
+
+---
+
+### **BST Search – Recursive (Steps format)**
+
+```
+Search(x, k)
+1. if x == NULL or x.key == k → return x
+2. if k < x.key → Search(x.left, k)
+3. else → Search(x.right, k)
+```
+
+---
+
+### **BST Search – Iterative (Steps format)**
+
+```
+Search(x, k)
+1. while x ≠ NULL and x.key ≠ k
+2.   if k < x.key → x = x.left
+3.   else → x = x.right
+4. return x
+```
+
+---
+
+### **Time Complexity**
+
+* **Best / Average:** O(log N)
+* **Worst (skewed tree):** O(N)
+
+Here’s a concise breakdown of the **BST Insert Operation** along with clean pseudocode:
+
+---
+
+### BST Insert Operation
+
+- **Start with an empty tree.**
+- Insert nodes one by one.
+- For each node:
+  - Compare with current node.
+  - If smaller → go to left subtree.
+  - If greater → go to right subtree.
+  - Repeat until you find an empty spot.
+- Insert the new node at that position.
+
+**Example Sequence:**  
+Insert → 12, 7, 9, 19, 5, 10  
+Final structure:
+```
+        12
+       /  \
+     7     19
+    / \
+   5   9
+         \
+         10
+```
+
+---
+
+### 🧮 Pseudocode: BST Insert
+
+```plaintext
+TreeInsert(T, z)  // T is the tree, z is the node to insert
+{
+    y = NIL       // y tracks the parent of x
+    x = root[T]   // Start from the root
+
+    while x ≠ NIL do
+    {
+        y = x
+        if key[z] < key[x]
+            x = left[x]
+        else
+            x = right[x]
+    }
+
+    p[z] = y       // Set parent of z
+
+    if y = NIL
+        root[T] = z        // Tree was empty
+    else if key[z] < key[y]
+        left[y] = z        // Insert as left child
+    else
+        right[y] = z       // Insert as right child
+}
+```
+
+---
+
+### BST Delete Operation 
+
+- **Case 1: Node with No Children (Leaf Node)**
+  - Simply remove the node.
+  - No structural changes needed.
+
+- **Case 2: Node with One Child**
+  - Remove the node.
+  - Connect its child directly to the node’s parent.
+
+- **Case 3: Node with Two Children**
+  - Replace the node with either:
+    - **Inorder Predecessor**: Largest value in left subtree.
+    - **Inorder Successor**: Smallest value in right subtree.
+  - Then delete the predecessor/successor node (which will now be Case 1 or 2).
+
+---
+
+Here’s the clean and structured **pseudocode for deleting a node in a Binary Search Tree (BST)**, based on the image you shared:
+
+---
+
+#### BST Delete Operation – Pseudocode
+
+```plaintext
+TreeDelete(T, z)  // T is the tree, z is the node to delete
+1. if z.left == NIL or z.right == NIL
+2.     y = z                      // y is the node to be removed
+3. else
+4.     y = TreeSuccessor(z)      // y is z's successor
+5. if y.left == NIL
+6.     x = y.right               // x is y's child
+7. else
+8.     x = y.left
+9. if x ≠ NIL
+10.    x.parent = y.parent       // update x's parent
+11. if y.parent == NIL
+12.    T.root = x                // x becomes new root
+13. else if y == y.parent.left
+14.    y.parent.left = x         // x replaces y on left
+15. else
+16.    y.parent.right = x        // x replaces y on right
+17. if y ≠ z
+18.    z.key = y.key             // copy y's key to z
+19.    copy y's satellite data into z
+
+20. return y                     // return deleted node
+```
+
+---
 
