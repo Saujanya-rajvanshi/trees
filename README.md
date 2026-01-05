@@ -198,7 +198,7 @@ Original Binary Tree                 Extended Binary Tree
 
 **2. Maximum nodes in a binary tree of height `h`**
 
-* Max nodes = **2^(h+1) − 1**/
+* Max nodes = **[2^(h+1) ]− 1**
 * Height = longest path from root to leaf
 
 **3. Minimum nodes in a binary tree of height `h`**
@@ -215,6 +215,11 @@ Original Binary Tree                 Extended Binary Tree
 
 * Min height = **⌈log₂(N + 1)⌉ − 1**
 * (Perfect / complete binary tree)
+
+**6. Minimum no. of leaf nodes of a binary tree with `T` internal nodes**
+
+* min no. of leaf nodes : **L = T + 1**
+
   
 ---
 
