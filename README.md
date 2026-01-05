@@ -25,25 +25,25 @@
 ### height and depth 
 In a tree data structure, height and depth are related but different concepts.
 
----
+```
 1. Height
 Definition: The height of a node is the number of edges on the longest path from that node to a leaf.
 Leaf node: Height = 0.
 Height of tree: Height of the root node.
 Formula:
 Height(node)=1+max⁡(Height(leftChild),Height(rightChild))\text{Height}(node) = 1 + \max(\text{Height}(leftChild), \text{Height}(rightChild))Height(node)=1+max(Height(leftChild),Height(rightChild))
-```
+
 Example:    A
            / \
           B   C
          / \
         D   E
-```
+
 Height(D) = 0
 Height(B) = 1
 Height(A) = 2
 
----
+```
 
 ---
 2. Depth
