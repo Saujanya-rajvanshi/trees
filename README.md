@@ -4,7 +4,9 @@
 - [basic](#basic)
 - [height and depth](#height-and-depth)
 - [binary tree](#binary-tree)
-
+- [avl](#avl)
+- [b tree](#b-tree)
+- [threaded binary tree](#threaded-binary-tree)
 
 ## basic 
 
@@ -588,6 +590,7 @@ decisions.
 
 ---
 
+###### avl 
 ---
 
 ### 🌳 AVL Tree Rotations 
@@ -609,3 +612,155 @@ decisions.
 - **RL**: Insert 10 → 30 → 20 → imbalance at 10 → LL on 30 → RR on 10 → root becomes 20
 
 ---
+```
+
+UNBALANCED
+
+LL                     RR                   LR                 RL 
+   10                      10               30                10
+    \                     /                 /                  \
+     20                 20                10                    30
+       \               /                   \                    /
+       30            30                     20                 20
+
+BALANCED
+
+     20                     
+    /  \                  
+  10   30
+
+```
+---
+
+### 🗑️ AVL Tree Deletion – 3 Cases
+
+| Case | Description | Action |
+|------|-------------|--------|
+| **1. Leaf Node** | Node has no children | Delete directly; apply rotation if needed |
+| **2. One Child** | Node has one child | Replace with child; delete child; rebalance if needed |
+| **3. Two Children** | Node has two children | Replace with inorder successor; delete successor; rebalance if needed |
+
+---
+
+### ✅ AVL Tree Advantages over BST
+
+| Advantage | Description |
+|-----------|-------------|
+| **Balanced Height** | Ensures O(log n) for search, insert, delete |
+| **Guaranteed Performance** | Predictable time complexity for all operations |
+| **Optimized for Search** | Fewer comparisons due to balanced structure |
+| **Real-time Suitability** | Ideal for systems needing consistent performance |
+
+**Disadvantage**: Slight overhead due to rebalancing after insert/delete.
+
+---
+         
+ ##### b tree
+
+ ## 🌳 B TREE
+
+- A **self-balanced M-way search tree** with multiple keys and children per node.
+- All **leaf nodes are at the same level**.
+- Grows and shrinks from the **root**, unlike BSTs which grow downward.
+- Time complexity for **search, insert, delete**: **O(log n)**.
+
+---
+
+### 📐 B-Tree Properties
+
+| Property                          | Rule (Order M)                     |
+|----------------------------------|------------------------------------|
+| Max keys per node                | M − 1                              |
+| Min keys (except root)           | ceil(M/2) − 1                      |
+| Max children per internal node   | M                                  |
+| Min children (except root)       | ceil(M/2)                          |
+| Root min children (if internal)  | 2                                  |
+| Keys in node                     | Must be in **ascending order**     |
+
+---
+
+### 🔁 B-Tree vs Minimum Degree (t)
+
+| Metric               | In terms of M | In terms of t |
+|----------------------|---------------|---------------|
+| Max keys             | M − 1         | 2t − 1        |
+| Max children         | M             | 2t            |
+| Min keys (non-root)  | ceil(M/2) − 1 | t − 1         |
+| Min children         | ceil(M/2)     | t             |
+| Root min children    | 2             | 2             |
+
+---
+
+<img width="607" height="301" alt="image" src="https://github.com/user-attachments/assets/39c78a23-f0e4-4749-97dc-25ac705414c5" />
+
+## insertion 
+* alaways insertion happens at the leaf node
+* To insert a new key,
+* we go down from root to leaf.
+* add upto m-1 no. of keys
+* on mth key insrtion split the leaf node from the middle element
+
+
+## deletion 
+1. from leaf node 
+**case 1.** if leaf node contaion **more than min no.**(ceil(M/2) − 1) of trees - delete **directly**
+**case 2.** if leaf node contaion **min no.** - **borow** from adjacent leaf node
+in here the closest parent node comes down and the largest or smallest node gets on the parent depending on weither the node is on right or left respectively
+**case 2.** if **both** the adjacent leaf node also have min no. of keys then the parent node comes and **merges** with the adjacent node.
+
+2. from internal node
+* look for the attach leaf node
+* **case 1.** - attached leaf node has more than min no. nodes
+* from the right replace with the smallest value
+* from the left take the largest value 
+* **case 2.** - attached leaf node has min no. nodes
+* merge the attached leaf node with the node
+* root node comes if it is the closest i this carefully rearange acording to bonary tree
+* if both adjacent root and leaf node has min no of keys same level of adjacent node merges
+* **case 3.** root not deletion
+* either one of in order predecer or in order succesor takes place of root
+
+Here are concise notes on **Threaded Binary Trees**:
+
+---
+
+##### threaded binary tree
+
+## 🧵 Threaded Binary Tree 
+
+- Designed to optimize **inorder traversal** without recursion or stack.
+- **Right NULL pointers** are replaced with links to the **inorder successor**.
+- Each node stores:
+  - **Left field** → left thread or child
+  - **Right field** → right thread or child
+  - **Middle field** → actual data
+- Improves traversal speed and reduces memory overhead.
+
+---
+
+
+<img width="972" height="387" alt="image" src="https://github.com/user-attachments/assets/b22d262b-9617-4f53-9442-90faeeb91131" />
+
+---
+
+### 🌳 Comparison of Binary Tree, BST, and AVL Tree
+
+| Feature                     | Binary Tree                      | Binary Search Tree (BST)                          | AVL Tree                                      |
+|----------------------------|----------------------------------|--------------------------------------------------|-----------------------------------------------|
+| **Structure**              | Each node has ≤ 2 children       | Binary tree with ordered keys                    | Self-balancing BST with strict balance factor |
+| **Ordering Rule**          | No specific order                | Left < Root < Right                              | Same as BST                                   |
+| **Balancing**              | Not balanced                     | Not guaranteed                                   | Always balanced (BF ∈ {−1, 0, +1})            |
+| **Search Time**            | O(n)                             | O(log n) average, O(n) worst                     | O(log n) guaranteed                           |
+| **Insert/Delete Time**     | O(n)                             | O(log n) average, O(n) worst                     | O(log n) guaranteed                           |
+| **Rotations**              | Not applicable                   | Not applicable                                   | Required to maintain balance                  |
+| **Space Complexity**       | O(n)                             | O(n)                                             | O(n)                                           |
+| **Use Case**               | Simple hierarchical data         | Ordered data with moderate performance needs     | Real-time systems, fast and predictable access|
+
+---
+
+### 🔍 Key Insights
+
+- **Binary Tree** is a general structure with no ordering or balancing — useful for hierarchical data but inefficient for search.
+- **BST** improves search by ordering nodes, but can degrade to a linked list if unbalanced.
+- **AVL Tree** maintains strict balance using rotations, ensuring consistently fast operations.
+
