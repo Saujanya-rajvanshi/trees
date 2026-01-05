@@ -299,7 +299,7 @@ arr = [8,6,5,9, , , ]   // write all null values in the last
 
 ## linked representation
 _________________________________________________________________
-| address of eft child |    data       |  address of right child |
+| address of Left child |    data       |  address of right child |
 __________________________________________________________________
 
 
