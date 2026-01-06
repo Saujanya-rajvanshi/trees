@@ -710,9 +710,9 @@ BALANCED
 ## insertion 
 * alaways insertion happens at the leaf node
 * To insert a new key,
-* we go down from root to leaf.
+* we go down from roo to  leaf.
 * add upto m-1 no. of keys
-* on mth key insrtion split the leaf node from the middle element
+* on mth key insrtion split the leaf node from the middle element and add to **root**  it grows from down to top  
 
 
 ## deletion 
