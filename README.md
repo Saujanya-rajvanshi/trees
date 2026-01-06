@@ -846,6 +846,9 @@ in here the closest parent node comes down and the largest or smallest node gets
 
 ---
 
+<img width="695" height="371" alt="image" src="https://github.com/user-attachments/assets/0657fe8c-680f-42bb-9477-b33e0d82ac8d" />
+
+
 
 ###### non recursive post order traversal 
 ---
