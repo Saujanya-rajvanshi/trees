@@ -426,8 +426,6 @@ Search(x, k)
 * **Best / Average:** O(log N)
 * **Worst (skewed tree):** O(N)
 
-Here’s a concise breakdown of the **BST Insert Operation** along with clean pseudocode:
-
 ---
 
 ### 🧮 BST Insert Operation
