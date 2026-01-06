@@ -775,14 +775,12 @@ in here the closest parent node comes down and the largest or smallest node gets
 
 ---
 ### single threaded 
-
-<img width="560" height="202" alt="image" src="https://github.com/user-attachments/assets/b22d262b-9617-4f53-9442-90faeeb91131" />
+<img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/f9b472d4-66bb-44cf-9162-7ad62f3cd9a7" />
 
 ---
 
 ### double threaded
-
-<img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/f9b472d4-66bb-44cf-9162-7ad62f3cd9a7" />
+<img width="560" height="202" alt="image" src="https://github.com/user-attachments/assets/b22d262b-9617-4f53-9442-90faeeb91131" />
 
 ---
 
