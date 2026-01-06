@@ -733,7 +733,7 @@ in here the closest parent node comes down and the largest or smallest node gets
 * root node comes if it is the closest , in this carefully rearange acording to binary tree
 * if both adjacent root and leaf node has min no of keys same level of adjacent node merges
 
-**3. root not deletion**
+**3. root node deletion**
 * either one of in order predecer or in order succesor takes place of root
 
 ---
