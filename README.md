@@ -329,7 +329,13 @@ Process of visiting **all nodes** of a binary tree in a specific order.
 3. **Post-Order** → Left → Right → **Root**
 
 ---
-<img width="189" height="127" alt="image" src="https://github.com/user-attachments/assets/8e2d3919-31ad-4f64-bb9e-7184edd10a5b" />
+      A
+     / \
+    B   C
+   /\   /\
+  D  F G  H
+ /\     \
+I  J     K
 
 ### Traversal Orders 
 
