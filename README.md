@@ -721,7 +721,8 @@ BALANCED
 * **case 1.** if leaf node contaion **more than min no.**(ceil(M/2) − 1) of trees - delete **directly**
 * **case 2.** if leaf node contaion **min no.** - **borow** from adjacent leaf node
 in here the closest parent node comes down and the largest or smallest node gets on the parent depending on weither the node is on right or left respectively
-* **case 2.** if **both** the adjacent leaf node also have min no. of keys then the parent node comes and **merges** with the adjacent node.
+* **case 3.** if **both** the adjacent leaf node also have min no. of keys then the parent node comes and **merges** with the adjacent node.
+* **case 4.** if **parent node also** has min no. of key than **adjacent parent** node comes and merges
 
 **2. from internal node**
 * look for the attach leaf node
@@ -729,7 +730,7 @@ in here the closest parent node comes down and the largest or smallest node gets
 * from the right replace with the smallest value
 * from the left take the largest value 
 * **case 2.** - attached leaf node has min no. nodes
-* merge the attached leaf node with the node
+* merge the attached parent node with the node
 * root node comes if it is the closest , in this carefully rearange acording to binary tree
 * if both adjacent root and leaf node has min no of keys same level of adjacent node merges
 
